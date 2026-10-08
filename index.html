@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Text Swiftly Garage Doors</title>
+<style>
+  :root { --navy:#0D1F3D; --orange:#FF6A00; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body { background:var(--navy); color:#ffffff; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; }
+  main { width:100%; max-width:640px; padding:32px 24px; }
+  h1 { font-size:34px; line-height:1.15; margin:0 0 12px 0; }
+  p { font-size:22px; line-height:1.4; margin:0 0 24px 0; }
+  .btn { display:block; background:var(--orange); color:#ffffff; text-decoration:none; font-size:34px; font-weight:700; padding:26px 20px; border-radius:16px; margin:0 0 28px 0; }
+  .big { font-size:40px; font-weight:700; line-height:1.2; margin:0 0 20px 0; }
+  .big span { color:var(--orange); }
+  .call { font-size:26px; margin:0; }
+  .call a { color:#ffffff; font-weight:700; text-decoration:underline; }
+  .desktop-only { display:none; }
+  body.desktop .desktop-only { display:block; }
+  body.desktop .mobile-only { display:none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Swiftly Garage Doors</h1>
+  <div class="mobile-only"><p>Opening your messages...</p></div>
+  <div class="desktop-only"><div class="big">Text us at <span>(480) 418-2220</span></div></div>
+  <a class="btn" id="textbtn" href="sms:+14804182220">Text us</a>
+  <p class="call">Or call <a href="tel:+16232167185">(623) 216-7185</a></p>
+</main>
+<script>
+  (function () {
+    var smsHref = 'sms:+14804182220?&body=' + encodeURIComponent("I'm interested in the last chance tune up offer");
+    var ua = navigator.userAgent || '';
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    document.getElementById('textbtn').setAttribute('href', smsHref);
+    if (isMobile) {
+      location.replace(smsHref);
+    } else {
+      document.body.className = 'desktop';
+    }
+  })();
+</script>
+</body>
+</html>
